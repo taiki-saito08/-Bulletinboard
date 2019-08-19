@@ -1,0 +1,27 @@
+@(message:String,form:Form[CommentForm.Data],id:String)(implicit
+    requerst: MessagesRequestHeader)
+
+@main("掲示板","掲示板","copyright 2019.") {
+    <table>
+        @Html(message)
+    </table>
+    <br>
+    <br>
+    <h2>コメントを書く</h2>
+    <form action="/create?id=@id" method="POST">
+        <table>
+            <tr>
+                <td>名前</td><td><input type="text" name="name" value="匿名さん"></td>
+            </tr>
+            <tr>
+                <td>コメント</td><td><textarea name="comment" rows="4" cols="40" required></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+
+    <a href="/">topへ</a>
+        
+}

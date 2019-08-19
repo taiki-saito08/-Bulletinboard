@@ -1,0 +1,17 @@
+@(message:String)
+
+@main("部屋作成","掲示板作成画面","copyright 2019.") {
+    <form action="/roomCreate" method="POST">
+        <table border="1">
+            <tr>
+                <td>ルーム名</td><td><input type="text" name="roomName"></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+    @message
+    <a href="/">topへ</a>
+}
