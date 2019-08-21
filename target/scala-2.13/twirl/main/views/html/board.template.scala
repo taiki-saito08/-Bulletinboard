@@ -65,8 +65,8 @@ Seq[Any](format.raw/*2.37*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-08-19T13:56:37.163
-                  SOURCE: C:/Users/admin/Bulletinboard/app/views/board.scala.html
+                  DATE: 2019-08-21T19:28:03.982
+                  SOURCE: C:/Users/admin/ScalaBulletinBoard/-Bulletinboard/app/views/board.scala.html
                   HASH: 7ee541686f1d82a34209e990d1f2c775da0352b6
                   MATRIX: 781->1|977->102|1007->107|1050->142|1089->144|1121->150|1165->168|1198->181|1230->187|1339->269|1362->271
                   LINES: 21->1|27->2|29->4|29->4|29->4|30->5|31->6|31->6|32->7|36->11|36->11

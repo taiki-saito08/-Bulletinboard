@@ -12,6 +12,10 @@ GET     /board                       controllers.HomeController.message(id :Int)
 POST     /board                       controllers.HomeController.message(id :Int)
 GET      /createRoom                  controllers.HomeController.createRoom()
 POST     /roomCreate                    controllers.HomeController.roomCreate()
+GET      /rootLogin                  controllers.HomeController.rootLogin()
+POST     /login                    controllers.HomeController.login()
+GET      /rootSignUp                  controllers.HomeController.rootSignUp()
+POST     /signUp                    controllers.HomeController.signUp()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

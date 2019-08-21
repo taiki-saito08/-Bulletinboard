@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/admin/Bulletinboard/conf/routes
-// @DATE:Mon Aug 19 13:56:36 JST 2019
+// @SOURCE:C:/Users/admin/ScalaBulletinBoard/-Bulletinboard/conf/routes
+// @DATE:Wed Aug 21 19:28:03 JST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -18,6 +18,26 @@ package controllers.javascript {
     }
 
   
+    // @LINE:18
+    def signUp: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.signUp",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "signUp"})
+        }
+      """
+    )
+  
+    // @LINE:15
+    def rootLogin: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.rootLogin",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "rootLogin"})
+        }
+      """
+    )
+  
     // @LINE:10
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.create",
@@ -34,6 +54,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "createRoom"})
+        }
+      """
+    )
+  
+    // @LINE:17
+    def rootSignUp: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.rootSignUp",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "rootSignUp"})
         }
       """
     )
@@ -72,9 +102,19 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:16
+    def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.login",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:17
+  // @LINE:21
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -82,7 +122,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:17
+    // @LINE:21
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

@@ -147,4 +147,120 @@ class HomeController @Inject()(db: Database,
         }
         Redirect("/")
     }
+
+    //ログイン画面へ遷移
+    def rootLogin() = Action { implicit request =>
+        Ok(views.html.login())
+    }
+
+    //ログイン処理
+    def login() = Action { implicit request =>
+        
+        val form:Option[Map[String,Seq[String]]]=
+            request.body.asFormUrlEncoded
+        val param:Map[String,Seq[String]] = form.getOrElse(Map())
+        var loginUser=null
+        
+        var mail:String = param.get("mail").get(0)
+        var pass:String = param.get("pass").get(0)
+        
+        try 
+            db.withConnection { conn =>
+                val rs = conn.prepareStatement(
+                    "Select * From user Where mail="+mail+",pass="+pass)
+
+                //')' expected but '(' found.
+                if(rs.next){
+                    loginUser=new User(rs.getInt("id"),rs.getString("name"),rs.getString("mail"),rs.getString("pass"),rs.getString("date"),rs.getString("comment"))
+
+                }
+            }
+        catch {
+            case e: SQLException =>
+                Ok(views.html.login(
+                    "フォームを入力してください",
+                ))
+        }
+        Redirect("/")
+    }
+
+    //新規登録画面へ遷移
+    def rootSignUp() = Action { implicit request =>
+        Ok(views.html.signUp())
+    }
+
+    //新規登録処理
+    def signUp() = Action { implicit request =>
+        
+
+        val form:Option[Map[String,Seq[String]]]=
+            request.body.asFormUrlEncoded
+        val param:Map[String,Seq[String]] = form.getOrElse(Map())
+        
+        var mail:String = param.get("name").get(0)
+        var pass:String = param.get("mail").get(0)
+        var pass:String = param.get("pass").get(0)
+        var pass:String = param.get("comment").get(0)
+        
+        try 
+            db.withConnection { conn =>
+                val ps = conn.prepareStatement(
+                    "insert into userAccount values (default,?,?,?,?,?)")
+                ps.setString (1,name)
+                ps.setString (2,mail)
+                ps.setString (3,pass)
+                ps.setString (4,DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").print(new DateTime()))
+                ps.setString (5,comment)
+                
+                ps.executeUpdate
+            }
+        catch {
+            case e: SQLException =>
+                Ok(views.html.createRoom(
+                    "フォームを入力してください",
+    
+                ))
+        }
+        Redirect("/rootLogin")
+    }
+
+    //プロフィール変更へ遷移
+    def rootUpdate() = Action { implicit request =>
+        Ok(views.html.update())
+    }
+
+    //変更処理
+    def update() = Action { implicit request =>
+        
+
+        val form:Option[Map[String,Seq[String]]]=
+            request.body.asFormUrlEncoded
+        val param:Map[String,Seq[String]] = form.getOrElse(Map())
+        var msg = ""
+        var mail:String=param.get("name").get(0)
+        var pass:String=param.get("mail").get(0)
+        var pass:String=param.get("pass").get(0)
+        var pass:String=param.get("comment").get(0)
+        
+        try 
+            db.withConnection { conn =>
+                val ps = conn.prepareStatement(
+                    "insert into userAccount values (default,?,?,?,?,?)")
+                ps.setString (1,name)
+                ps.setString (2,mail)
+                ps.setString (3,pass)
+                ps.setString (4,DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").print(new DateTime()))
+                ps.setString (5,comment)
+                
+                ps.executeUpdate
+            }
+        catch {
+            case e: SQLException =>
+                Ok(views.html.createRoom(
+                    "フォームを入力してください",
+    
+                ))
+        }
+        Redirect("/rootLogin")
+    }
 }

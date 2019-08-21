@@ -1,9 +1,82 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\hello\app\controllers\HomeController.scala:104:25: value += is not a member of String[0m
-[0m[[0m[31merror[0m] [0m[0m  Expression does not convert to assignment because:[0m
-[0m[[0m[31merror[0m] [0m[0m    not found: value rs[0m
-[0m[[0m[31merror[0m] [0m[0m    not found: value rs[0m
-[0m[[0m[31merror[0m] [0m[0m    not found: value rs[0m
-[0m[[0m[31merror[0m] [0m[0m    expansion: msg = msg.+("<tr><td>".+(<rs: error>.<getString: error>("comment.userName")).<$plus: error>("</td><td>").<$plus: error>(<rs: error>.<getString: error>("comment.date")).<$plus: error>("</td></tr><td colspan=\'2\'><textarea rows=\'4\' cols=\'40\' disabled>").<$plus: error>(<rs: error>.<getString: error>("comment.comment")).<$plus: error>("</textarea></td></tr>"))[0m
-[0m[[0m[31merror[0m] [0m[0m                    msg += "<tr><td>" + rs.getString("comment.userName") + "</td><td>"+ rs.getString("comment.date") +[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:153:28: not enough arguments for method apply: (message: String)play.twirl.api.HtmlFormat.Appendable in object login.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter message.[0m
+[0m[[0m[31merror[0m] [0m[0m        Ok(views.html.login())[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:173:23: value next is not a member of java.sql.PreparedStatement[0m
+[0m[[0m[31merror[0m] [0m[0m                if(rs.next){[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:174:35: not found: type User[0m
+[0m[[0m[31merror[0m] [0m[0m                    loginUser=new User(rs.getInt("id"),rs.getString("name"),rs.getString("mail"),rs.getString("pass"),rs.getString("date"),rs.getString("comment"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:174:43: value getInt is not a member of java.sql.PreparedStatement[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean setInt?[0m
+[0m[[0m[31merror[0m] [0m[0m                    loginUser=new User(rs.getInt("id"),rs.getString("name"),rs.getString("mail"),rs.getString("pass"),rs.getString("date"),rs.getString("comment"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:174:59: value getString is not a member of java.sql.PreparedStatement[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean setNString or setString?[0m
+[0m[[0m[31merror[0m] [0m[0m                    loginUser=new User(rs.getInt("id"),rs.getString("name"),rs.getString("mail"),rs.getString("pass"),rs.getString("date"),rs.getString("comment"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:174:80: value getString is not a member of java.sql.PreparedStatement[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean setNString or setString?[0m
+[0m[[0m[31merror[0m] [0m[0m                    loginUser=new User(rs.getInt("id"),rs.getString("name"),rs.getString("mail"),rs.getString("pass"),rs.getString("date"),rs.getString("comment"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:174:101: value getString is not a member of java.sql.PreparedStatement[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean setNString or setString?[0m
+[0m[[0m[31merror[0m] [0m[0m                    loginUser=new User(rs.getInt("id"),rs.getString("name"),rs.getString("mail"),rs.getString("pass"),rs.getString("date"),rs.getString("comment"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:174:122: value getString is not a member of java.sql.PreparedStatement[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean setNString or setString?[0m
+[0m[[0m[31merror[0m] [0m[0m                    loginUser=new User(rs.getInt("id"),rs.getString("name"),rs.getString("mail"),rs.getString("pass"),rs.getString("date"),rs.getString("comment"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:174:143: value getString is not a member of java.sql.PreparedStatement[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean setNString or setString?[0m
+[0m[[0m[31merror[0m] [0m[0m                    loginUser=new User(rs.getInt("id"),rs.getString("name"),rs.getString("mail"),rs.getString("pass"),rs.getString("date"),rs.getString("comment"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:189:23: object signUp is not a member of package views.html[0m
+[0m[[0m[31merror[0m] [0m[0m        Ok(views.html.signUp())[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:202:13: pass is already defined as variable pass[0m
+[0m[[0m[31merror[0m] [0m[0m        var pass:String = param.get("pass").get(0)[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:203:13: pass is already defined as variable pass[0m
+[0m[[0m[31merror[0m] [0m[0m        var pass:String = param.get("comment").get(0)[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:209:33: not found: value name[0m
+[0m[[0m[31merror[0m] [0m[0m                ps.setString (1,name)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:213:33: not found: value comment[0m
+[0m[[0m[31merror[0m] [0m[0m                ps.setString (5,comment)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:229:23: object update is not a member of package views.html[0m
+[0m[[0m[31merror[0m] [0m[0m        Ok(views.html.update())[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:242:13: pass is already defined as variable pass[0m
+[0m[[0m[31merror[0m] [0m[0m        var pass:String=param.get("pass").get(0)[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:243:13: pass is already defined as variable pass[0m
+[0m[[0m[31merror[0m] [0m[0m        var pass:String=param.get("comment").get(0)[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:249:33: not found: value name[0m
+[0m[[0m[31merror[0m] [0m[0m                ps.setString (1,name)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:253:33: not found: value comment[0m
+[0m[[0m[31merror[0m] [0m[0m                ps.setString (5,comment)[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\models\Comment.scala:5:7: id  is already defined as variable id[0m
+[0m[[0m[31merror[0m] [0m[0m  var id:Int=id[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\models\Comment.scala:6:7: roomId  is already defined as variable roomId[0m
+[0m[[0m[31merror[0m] [0m[0m  var roomId:Int=Int[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\models\Comment.scala:7:7: userName  is already defined as variable userName[0m
+[0m[[0m[31merror[0m] [0m[0m  var userName:String=name[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\models\Comment.scala:8:7: comment  is already defined as variable comment[0m
+[0m[[0m[31merror[0m] [0m[0m  var comment:String=comment[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\models\Comment.scala:9:7: date  is already defined as variable date[0m
+[0m[[0m[31merror[0m] [0m[0m  var date:String=date[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\models\Comment.scala:3:2: trait Singleton is abstract; cannot be instantiated[0m
+[0m[[0m[31merror[0m] [0m[0m@Singleton[0m
+[0m[[0m[31merror[0m] [0m[0m ^[0m

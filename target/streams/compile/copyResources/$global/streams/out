@@ -1,7 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\Bulletinboard\conf\application.conf,C:\Users\admin\Bulletinboard\target\scala-2.13\classes\application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\Bulletinboard\conf\evolutions,C:\Users\admin\Bulletinboard\target\scala-2.13\classes\evolutions)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\Bulletinboard\conf\evolutions\default,C:\Users\admin\Bulletinboard\target\scala-2.13\classes\evolutions\default)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\Bulletinboard\conf\evolutions\default\1.sql,C:\Users\admin\Bulletinboard\target\scala-2.13\classes\evolutions\default\1.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\Bulletinboard\conf\logback.xml,C:\Users\admin\Bulletinboard\target\scala-2.13\classes\logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\Bulletinboard\conf\routes,C:\Users\admin\Bulletinboard\target\scala-2.13\classes\routes)[0m

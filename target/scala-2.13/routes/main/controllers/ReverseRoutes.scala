@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/admin/Bulletinboard/conf/routes
-// @DATE:Mon Aug 19 13:56:36 JST 2019
+// @SOURCE:C:/Users/admin/ScalaBulletinBoard/-Bulletinboard/conf/routes
+// @DATE:Wed Aug 21 19:28:03 JST 2019
 
 import play.api.mvc.Call
 
@@ -17,6 +17,18 @@ package controllers {
     }
 
   
+    // @LINE:18
+    def signUp(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "signUp")
+    }
+  
+    // @LINE:15
+    def rootLogin(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "rootLogin")
+    }
+  
     // @LINE:10
     def create(): Call = {
       
@@ -27,6 +39,12 @@ package controllers {
     def createRoom(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "createRoom")
+    }
+  
+    // @LINE:17
+    def rootSignUp(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "rootSignUp")
     }
   
     // @LINE:14
@@ -55,16 +73,22 @@ package controllers {
       Call("GET", _prefix)
     }
   
+    // @LINE:16
+    def login(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "login")
+    }
+  
   }
 
-  // @LINE:17
+  // @LINE:21
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:17
+    // @LINE:21
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
