@@ -1,10 +1,18 @@
-@(message:String,form:Form[CommentForm.Data],id:String)(implicit
+@(messages:java.util.ArrayList[Comment],form:Form[CommentForm.Data],id:String)(implicit
     requerst: MessagesRequestHeader)
 
 @main("掲示板","掲示板","copyright 2019.") {
-    <table>
-        @Html(message)
-    </table>
+    @for(message <- messages){
+        <table>
+            <tr>
+                <td>@message.userName</td>
+                <td>@message.date</td>
+            </tr>
+            <tr>
+                <td colspan='2'><textarea rows='4' cols='40' disabled>@message.comment</textarea></td>
+            </tr>
+        </table>
+    }
     <br>
     <br>
     <h2>コメントを書く</h2>

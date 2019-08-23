@@ -11,6 +11,8 @@ import PersonForm._
 import CommentForm._
 import org.joda.time.DateTime
 import org.joda.time.format._
+import models.User
+import models.Comment
 
 @Singleton
 class HomeController @Inject()(db: Database,
@@ -70,10 +72,7 @@ class HomeController @Inject()(db: Database,
             }
         catch {
             case e: SQLException =>
-                Ok(views.html.board(
-                    "フォームを入力してください",
-                    commentForm,id.toString
-                ))
+                
         }
         Redirect("/board?id="+id)
     }
@@ -81,7 +80,8 @@ class HomeController @Inject()(db: Database,
     //掲示板の部屋に入る
     def message(id:Int) = Action { implicit request =>
         var id=request.getQueryString("id").getOrElse("")
-        
+        var comment:Comment = null
+        var commentList=new java.util.ArrayList[Comment]()
         
         var msg = ""
 
@@ -95,9 +95,8 @@ class HomeController @Inject()(db: Database,
                     """Order by comment.date desc""")
 
                 while(rs1.next){
-                    msg += "<tr><td>" + rs1.getString("comment.userName") + "</td><td>"+ rs1.getString("comment.date") +
-                     "</td></tr><td colspan='2'><textarea rows='4' cols='40' disabled>" +
-                        rs1.getString("comment.comment") +"</textarea></td></tr>"
+                    comment=new Comment(rs1.getString("comment.userName"),rs1.getString("comment.comment"),rs1.getString("comment.date"))
+                    commentList.add(comment)
                 }
             
             }
@@ -107,7 +106,7 @@ class HomeController @Inject()(db: Database,
         }
         
         Ok(views.html.board(
-            msg,commentForm,id
+            commentList,commentForm,id
         ))
     }
 
@@ -130,8 +129,8 @@ class HomeController @Inject()(db: Database,
         }
 
         try 
-            db.withConnection { conn =>
-                val ps = conn.prepareStatement(
+            db.withConnection { con =>
+                val ps = con.prepareStatement(
                     "insert into room values (default,?,?)")
                 ps.setString (1,name)
                 ps.setString (2,DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").print(new DateTime()))
@@ -150,7 +149,7 @@ class HomeController @Inject()(db: Database,
 
     //ログイン画面へ遷移
     def rootLogin() = Action { implicit request =>
-        Ok(views.html.login())
+        Ok(views.html.login("入力してください"))
     }
 
     //ログイン処理
@@ -159,19 +158,20 @@ class HomeController @Inject()(db: Database,
         val form:Option[Map[String,Seq[String]]]=
             request.body.asFormUrlEncoded
         val param:Map[String,Seq[String]] = form.getOrElse(Map())
-        var loginUser=null
-        
+        //var loginUser=null
+        val session = request.session.get("user")
         var mail:String = param.get("mail").get(0)
         var pass:String = param.get("pass").get(0)
         
         try 
-            db.withConnection { conn =>
-                val rs = conn.prepareStatement(
+             db.withConnection { con =>
+                var stmt = con.createStatement
+                val rs = stmt.executeQuery(
                     "Select * From user Where mail="+mail+",pass="+pass)
 
-                //')' expected but '(' found.
-                if(rs.next){
-                    loginUser=new User(rs.getInt("id"),rs.getString("name"),rs.getString("mail"),rs.getString("pass"),rs.getString("date"),rs.getString("comment"))
+                while(rs.next){
+                    var loginUser=new User(rs.getInt("id"),rs.getString("name"),rs.getString("mail"),rs.getString("pass"),rs.getString("date"),rs.getString("comment"))
+                    
 
                 }
             }
@@ -183,7 +183,7 @@ class HomeController @Inject()(db: Database,
         }
         Redirect("/")
     }
-
+/*
     //新規登録画面へ遷移
     def rootSignUp() = Action { implicit request =>
         Ok(views.html.signUp())
@@ -216,7 +216,7 @@ class HomeController @Inject()(db: Database,
             }
         catch {
             case e: SQLException =>
-                Ok(views.html.createRoom(
+                Ok(views.html.signUp(
                     "フォームを入力してください",
     
                 ))
@@ -256,11 +256,11 @@ class HomeController @Inject()(db: Database,
             }
         catch {
             case e: SQLException =>
-                Ok(views.html.createRoom(
+                Ok(views.html.update(
                     "フォームを入力してください",
     
                 ))
         }
-        Redirect("/rootLogin")
-    }
+        Redirect("/myPage")
+    }*/
 }
