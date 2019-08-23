@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/admin/ScalaBulletinBoard/-Bulletinboard/conf/routes
-// @DATE:Wed Aug 21 19:28:03 JST 2019
+// @DATE:Wed Aug 21 19:59:05 JST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -17,16 +17,6 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
-  
-    // @LINE:18
-    def signUp: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.signUp",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "signUp"})
-        }
-      """
-    )
   
     // @LINE:15
     def rootLogin: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -54,16 +44,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "createRoom"})
-        }
-      """
-    )
-  
-    // @LINE:17
-    def rootSignUp: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.rootSignUp",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "rootSignUp"})
         }
       """
     )

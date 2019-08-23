@@ -1,0 +1,8 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\conf\application.conf,C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\target\scala-2.13\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\conf\evolutions,C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\target\scala-2.13\classes\evolutions)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\conf\evolutions\default,C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\target\scala-2.13\classes\evolutions\default)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\conf\evolutions\default\1.sql,C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\target\scala-2.13\classes\evolutions\default\1.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\conf\evolutions\default\2.sql,C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\target\scala-2.13\classes\evolutions\default\2.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\conf\logback.xml,C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\target\scala-2.13\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\conf\routes,C:\Users\admin\ScalaBulletinBoard\-Bulletinboard\target\scala-2.13\classes\routes)[0m
