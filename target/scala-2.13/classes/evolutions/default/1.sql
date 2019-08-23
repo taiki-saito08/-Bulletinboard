@@ -1,7 +1,7 @@
 # --- !Ups
 
 create table comment (
-    id int AUTO_INCREMENT,
+    id int AUTO_INCREMENT primary key,
     roomId int not null,
     userName varchar(255) not null,
     comment varchar(255) not null,

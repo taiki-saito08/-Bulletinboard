@@ -1,0 +1,20 @@
+@(message:String)
+
+@main("ログイン","ログイン画面","copyright 2019.") {
+    <form action="/login" method="POST">
+        <table border="1">
+            <tr>
+                <td>メールアドレス</td><td><input type="mail" name="mail"></td>
+            </tr>
+            <tr>
+                <td>パスワード</td><td><input type="password" name="pass"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="ログイン"></td>
+            </tr>
+        </table>
+    </form>
+    <a href="/rootSignUp">登録していない方はこちら</a>
+    @message
+    <a href="/">topへ</a>
+}

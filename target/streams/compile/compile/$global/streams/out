@@ -1,9 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\hello\app\controllers\HomeController.scala:104:25: value += is not a member of String[0m
-[0m[[0m[31merror[0m] [0m[0m  Expression does not convert to assignment because:[0m
-[0m[[0m[31merror[0m] [0m[0m    not found: value rs[0m
-[0m[[0m[31merror[0m] [0m[0m    not found: value rs[0m
-[0m[[0m[31merror[0m] [0m[0m    not found: value rs[0m
-[0m[[0m[31merror[0m] [0m[0m    expansion: msg = msg.+("<tr><td>".+(<rs: error>.<getString: error>("comment.userName")).<$plus: error>("</td><td>").<$plus: error>(<rs: error>.<getString: error>("comment.date")).<$plus: error>("</td></tr><td colspan=\'2\'><textarea rows=\'4\' cols=\'40\' disabled>").<$plus: error>(<rs: error>.<getString: error>("comment.comment")).<$plus: error>("</textarea></td></tr>"))[0m
-[0m[[0m[31merror[0m] [0m[0m                    msg += "<tr><td>" + rs.getString("comment.userName") + "</td><td>"+ rs.getString("comment.date") +[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:107:25: value setString is not a member of java.sql.ResultSet[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean getNString or getString?[0m
+[0m[[0m[31merror[0m] [0m[0m                    rs1.setString(1,id)[0m
 [0m[[0m[31merror[0m] [0m[0m                        ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

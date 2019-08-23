@@ -1,8 +1,16 @@
     
-@(message:String)
+@(rooms:java.util.ArrayList[Room])
 
 @main("TOP","掲示板一覧","copyright 2019.") {
-    <p>@Html(message)</p>
+    @for(room <- rooms){
+        <table>
+            <tr>
+                <td><a href='/board?id="+rs.getInt("id")+"'>@room.name</a></td>
+                <td>@room.createDate 作成</td>
+            </tr>
+        </table>
+    }
+        
 
     <a href="/createRoom">部屋を作る</a>
         

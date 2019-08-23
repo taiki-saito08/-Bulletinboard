@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/admin/Bulletinboard/conf/routes
-// @DATE:Mon Aug 19 13:56:36 JST 2019
+// @SOURCE:C:/Users/admin/ScalaBulletinBoard/-Bulletinboard/conf/routes
+// @DATE:Wed Aug 21 19:59:05 JST 2019
 
 package controllers;
 
