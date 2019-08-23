@@ -13,6 +13,7 @@ import org.joda.time.DateTime
 import org.joda.time.format._
 import models.User
 import models.Comment
+import models.Room
 
 @Singleton
 class HomeController @Inject()(db: Database,
@@ -22,6 +23,8 @@ class HomeController @Inject()(db: Database,
     //トップページへ
     def index() = Action { implicit request =>
         var msg = ""
+        var roomList=new java.util.ArrayList[Room]()
+        var room:Room=null
         try {
             db.withConnection { con =>
                 var stmt = con.createStatement
@@ -29,17 +32,18 @@ class HomeController @Inject()(db: Database,
 
 
                 while(rs.next){
-                    msg += "<table><tr><td><a href='/board?id="+rs.getInt("id")+"'>" + rs.getString("name") +"</a></td><td>" +
-                        rs.getString("createDate") + "作成</td></tr></table>"
+                    room=new Room(rs.getInt("id"),rs.getString("name"),rs.getString("createDate"))
+                    roomList.add(room)
+                    
                 }
             
             }
         } catch {
             case e:SQLException =>
-                msg = "<li>no record...</li>"
+                
         }
         Ok(views.html.index(
-            msg
+            roomList
         ))
     }
 
@@ -88,11 +92,17 @@ class HomeController @Inject()(db: Database,
         try {
             db.withConnection { con =>
                 var stmt = con.createStatement
-                val rs1 = stmt.executeQuery("""Select comment.userName,comment.comment,comment.date from comment
+                /*val rs1 = stmt.executeQuery("""Select comment.userName,comment.comment,comment.date from comment
                     Inner Join room on comment.roomId = room.id
                     Where comment.roomId=room.id
                     AND room.id = """+id+
-                    """Order by comment.date desc""")
+                    """Order by comment.date desc""")*/
+
+                val rs1 = stmt.executeQuery("""Select comment.userName,comment.comment,comment.date from comment
+                    Inner Join room on comment.roomId = room.id
+                    Where comment.roomId=room.id
+                    AND room.id = """+id+""" Order by comment.date desc""")
+                    //rs1.setString(1,id)
 
                 while(rs1.next){
                     comment=new Comment(rs1.getString("comment.userName"),rs1.getString("comment.comment"),rs1.getString("comment.date"))
