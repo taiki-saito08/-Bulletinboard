@@ -25,11 +25,20 @@ object signUp extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Htm
 
 Seq[Any](format.raw/*1.18*/("""
 
-"""),_display_(/*3.2*/main("部屋作成","掲示板作成画面","copyright 2019.")/*3.42*/ {_display_(Seq[Any](format.raw/*3.44*/("""
-    """),format.raw/*4.5*/("""<form action="/roomCreate" method="POST">
+"""),_display_(/*3.2*/main("新規登録","新規登録画面","copyright 2019.")/*3.41*/ {_display_(Seq[Any](format.raw/*3.43*/("""
+    """),format.raw/*4.5*/("""<form action="/signUp" method="POST">
         <table border="1">
             <tr>
-                <td>ルーム名</td><td><input type="text" name="roomName"></td>
+                <td>NAME</td><td><input type="text" name="roomName"></td>
+            </tr>
+            <tr>
+                <td>MAIL</td><td><input type="mail" name="mail"></td>
+            </tr>
+            <tr>
+                <td>PASS</td><td><input type="password" name="pass"></td>
+            </tr>
+            <tr>
+                <td>COMMENT</td><td><input type="text" name="comment"></td>
             </tr>
             
             <tr>
@@ -37,8 +46,8 @@ Seq[Any](format.raw/*1.18*/("""
             </tr>
         </table>
     </form>
-    """),_display_(/*15.6*/message),format.raw/*15.13*/("""
-    """),format.raw/*16.5*/("""<a href="/">topへ</a>
+    """),_display_(/*24.6*/message),format.raw/*24.13*/("""
+    """),format.raw/*25.5*/("""<a href="/">topへ</a>
 """)))}))
       }
     }
@@ -55,11 +64,11 @@ Seq[Any](format.raw/*1.18*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-08-23T14:08:03.155
+                  DATE: 2019-08-26T19:18:29.270
                   SOURCE: C:/Users/admin/ScalaBulletinBoard/-Bulletinboard/app/views/signUp.scala.html
-                  HASH: 0e46a78db3dcddcaa16e671ff8c90bb267fdf711
-                  MATRIX: 730->1|841->17|871->22|919->62|958->64|990->70|1346->400|1374->407|1407->413
-                  LINES: 21->1|26->1|28->3|28->3|28->3|29->4|40->15|40->15|41->16
+                  HASH: 06ef6ba45adce0919cd9d3bfcc2d51def9c5da46
+                  MATRIX: 730->1|841->17|871->22|918->61|957->63|989->69|1675->729|1703->736|1736->742
+                  LINES: 21->1|26->1|28->3|28->3|28->3|29->4|49->24|49->24|50->25
                   -- GENERATED --
               */
           

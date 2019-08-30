@@ -5,7 +5,7 @@
     @for(room <- rooms){
         <table>
             <tr>
-                <td><a href='/board?id="+rs.getInt("id")+"'>@room.name</a></td>
+                <td><a href='/board?id=@room.id'>@room.name</a></td>
                 <td>@room.createDate 作成</td>
             </tr>
         </table>

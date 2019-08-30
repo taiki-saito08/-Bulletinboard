@@ -15,10 +15,10 @@ import play.api.templates.PlayMagic._
 import play.api.mvc._
 import play.api.data._
 
-object board extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template4[java.util.ArrayList[Comment],Form[CommentForm.Data],String,MessagesRequestHeader,play.twirl.api.HtmlFormat.Appendable] {
+object board extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template4[java.util.ArrayList[models.Comment],Form[CommentForm.Data],String,MessagesRequestHeader,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(messages:java.util.ArrayList[Comment],form:Form[CommentForm.Data],id:String)(implicit
+  def apply/*1.2*/(messages:java.util.ArrayList[models.Comment],form:Form[CommentForm.Data],id:String)(implicit
     requerst: MessagesRequestHeader):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
@@ -62,9 +62,9 @@ Seq[Any](format.raw/*2.37*/("""
     }
   }
 
-  def render(messages:java.util.ArrayList[Comment],form:Form[CommentForm.Data],id:String,requerst:MessagesRequestHeader): play.twirl.api.HtmlFormat.Appendable = apply(messages,form,id)(requerst)
+  def render(messages:java.util.ArrayList[models.Comment],form:Form[CommentForm.Data],id:String,requerst:MessagesRequestHeader): play.twirl.api.HtmlFormat.Appendable = apply(messages,form,id)(requerst)
 
-  def f:((java.util.ArrayList[Comment],Form[CommentForm.Data],String) => (MessagesRequestHeader) => play.twirl.api.HtmlFormat.Appendable) = (messages,form,id) => (requerst) => apply(messages,form,id)(requerst)
+  def f:((java.util.ArrayList[models.Comment],Form[CommentForm.Data],String) => (MessagesRequestHeader) => play.twirl.api.HtmlFormat.Appendable) = (messages,form,id) => (requerst) => apply(messages,form,id)(requerst)
 
   def ref: this.type = this
 
@@ -73,10 +73,10 @@ Seq[Any](format.raw/*2.37*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-08-23T17:01:21.694
+                  DATE: 2019-08-30T13:27:15.047
                   SOURCE: C:/Users/admin/ScalaBulletinBoard/-Bulletinboard/app/views/board.scala.html
-                  HASH: 4c31a55a83f375dbfe0087d19f3a2da4f92ef498
-                  MATRIX: 803->1|1022->125|1052->130|1095->165|1134->167|1166->174|1205->198|1243->199|1279->209|1353->257|1368->264|1397->273|1451->301|1466->308|1491->313|1633->428|1649->435|1678->443|1768->503|1801->509|1896->577|1919->579
+                  HASH: b0a1f8c2081f5c11ad7c7284dee8dbd5a89af66e
+                  MATRIX: 810->1|1036->132|1066->137|1109->172|1148->174|1180->181|1219->205|1257->206|1293->216|1367->264|1382->271|1411->280|1465->308|1480->315|1505->320|1647->435|1663->442|1692->450|1782->510|1815->516|1910->584|1933->586
                   LINES: 21->1|27->2|29->4|29->4|29->4|30->5|30->5|30->5|31->6|33->8|33->8|33->8|34->9|34->9|34->9|37->12|37->12|37->12|40->15|41->16|44->19|44->19
                   -- GENERATED --
               */

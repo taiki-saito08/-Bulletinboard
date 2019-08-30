@@ -1,5 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\controllers\HomeController.scala:107:25: value setString is not a member of java.sql.ResultSet[0m
-[0m[[0m[31merror[0m] [0m[0mdid you mean getNString or getString?[0m
-[0m[[0m[31merror[0m] [0m[0m                    rs1.setString(1,id)[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\models\ModelUser.scala:34:71: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `createUser`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m    def createUser(name:String,mail:String,pass:String,comment:String){[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\admin\ScalaBulletinBoard\-Bulletinboard\app\models\ModelUser.scala:53:59: procedure syntax is deprecated: instead, add `: Unit =` to explicitly declare `updateUser`'s return type[0m
+[0m[[0m[33mwarn[0m] [0m[0m    def updateUser(name:String,mail:String,comment:String){[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
