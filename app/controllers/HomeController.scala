@@ -29,10 +29,10 @@ class HomeController @Inject()(db: Database,
             
         } catch {
             case e:SQLException =>
-                
+                Ok(views.html.index(null,"管理者に連絡してください"))
         }
         Ok(views.html.index(
-            roomList
+            roomList,msg
         ))
     }
 
@@ -58,7 +58,7 @@ class HomeController @Inject()(db: Database,
             }
         catch {
             case e: SQLException =>
-                
+               Ok(views.html.errorPage())
         }
         Redirect("/board?id="+id)
     }
@@ -75,10 +75,10 @@ class HomeController @Inject()(db: Database,
         }catch{
             case e:SQLException =>
                 
-            msg = "<li>no record...</li>"
+            msg = "エラーが発生しました"
         }
         Ok(views.html.board(
-            commentList,commentForm,id
+            commentList,commentForm,id,msg
         ))
     }
 
@@ -106,10 +106,7 @@ class HomeController @Inject()(db: Database,
             }
         catch {
             case e: SQLException =>
-                Ok(views.html.createRoom(
-                    "フォームを入力してください",
-    
-                ))
+                Ok(views.html.errorPage())
         }
         Redirect("/")
     }
@@ -137,9 +134,7 @@ class HomeController @Inject()(db: Database,
             }
         catch {
             case e: SQLException =>
-                Ok(views.html.login(
-                    "フォームを入力してください",
-                ))
+                Ok(views.html.errorPage())
         }
          Ok(views.html.myPage(
             loginUser
@@ -171,10 +166,7 @@ class HomeController @Inject()(db: Database,
             }
         catch {
             case e: SQLException =>
-                Ok(views.html.signUp(
-                    "フォームを入力してください",
-    
-                ))
+                Ok(views.html.errorPage())
         }
         Redirect("/rootLogin")
     }
@@ -202,10 +194,7 @@ class HomeController @Inject()(db: Database,
             }
         catch {
             case e: SQLException =>
-                Ok(views.html.update(
-                    "フォームを入力してください",
-    
-                ))
+                Ok(views.html.errorPage())
         }
         Redirect("/myPage")
     }

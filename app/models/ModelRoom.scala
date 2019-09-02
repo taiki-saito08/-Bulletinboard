@@ -28,7 +28,7 @@ class ModelRoom(db:Database) {
             }
         } catch {
             case e:SQLException =>
-                
+                throw new SQLException
         }
 
         return roomList
@@ -47,7 +47,7 @@ class ModelRoom(db:Database) {
             }
         catch {
             case e: SQLException =>
-                
+                throw new SQLException
         }
     }
 }

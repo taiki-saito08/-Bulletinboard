@@ -32,8 +32,8 @@ class ModelComment(db:Database) {
             }
         } catch {
             case e:SQLException =>
-                
-            msg = "<li>no record...</li>"
+                throw new SQLException
+            
         }
 
         return commentList
@@ -55,7 +55,7 @@ class ModelComment(db:Database) {
             }
         catch {
             case e: SQLException =>
-                
+                throw new SQLException
         }
     }
 }
