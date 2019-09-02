@@ -29,16 +29,16 @@ Seq[Any](format.raw/*1.18*/("""
     """),format.raw/*4.5*/("""<form action="/signUp" method="POST">
         <table border="1">
             <tr>
-                <td>NAME</td><td><input type="text" name="roomName"></td>
+                <td>NAME</td><td><input type="text" name="roomName" required></td>
             </tr>
             <tr>
-                <td>MAIL</td><td><input type="mail" name="mail"></td>
+                <td>MAIL</td><td><input type="mail" name="mail" required></td>
             </tr>
             <tr>
-                <td>PASS</td><td><input type="password" name="pass"></td>
+                <td>PASS</td><td><input type="password" name="pass" required></td>
             </tr>
             <tr>
-                <td>COMMENT</td><td><input type="text" name="comment"></td>
+                <td>COMMENT</td><td><input type="text" name="comment" required></td>
             </tr>
             
             <tr>
@@ -64,10 +64,10 @@ Seq[Any](format.raw/*1.18*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-08-26T19:18:29.270
+                  DATE: 2019-08-30T19:54:06.253
                   SOURCE: C:/Users/admin/ScalaBulletinBoard/-Bulletinboard/app/views/signUp.scala.html
-                  HASH: 06ef6ba45adce0919cd9d3bfcc2d51def9c5da46
-                  MATRIX: 730->1|841->17|871->22|918->61|957->63|989->69|1675->729|1703->736|1736->742
+                  HASH: e540bc312597b7abe3cbaaab9053de04543db0fa
+                  MATRIX: 730->1|841->17|871->22|918->61|957->63|989->69|1711->765|1739->772|1772->778
                   LINES: 21->1|26->1|28->3|28->3|28->3|29->4|49->24|49->24|50->25
                   -- GENERATED --
               */

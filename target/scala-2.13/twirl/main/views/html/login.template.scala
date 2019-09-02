@@ -29,10 +29,10 @@ Seq[Any](format.raw/*1.18*/("""
     """),format.raw/*4.5*/("""<form action="/login" method="POST">
         <table border="1">
             <tr>
-                <td>メールアドレス</td><td><input type="mail" name="mail"></td>
+                <td>メールアドレス</td><td><input type="mail" name="mail" required></td>
             </tr>
             <tr>
-                <td>パスワード</td><td><input type="password" name="pass"></td>
+                <td>パスワード</td><td><input type="password" name="pass" required></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="ログイン"></td>
@@ -58,10 +58,10 @@ Seq[Any](format.raw/*1.18*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-08-21T19:28:04.004
+                  DATE: 2019-08-30T19:54:06.247
                   SOURCE: C:/Users/admin/ScalaBulletinBoard/-Bulletinboard/app/views/login.scala.html
-                  HASH: f6d4f94a87d7714f5c610751efcf9afdd35f4a9d
-                  MATRIX: 729->1|840->17|870->22|917->61|956->63|988->69|1494->549|1522->556|1555->562
+                  HASH: 478fa205428b0cda3a0747a531a5065fa6175ae1
+                  MATRIX: 729->1|840->17|870->22|917->61|956->63|988->69|1512->567|1540->574|1573->580
                   LINES: 21->1|26->1|28->3|28->3|28->3|29->4|43->18|43->18|44->19
                   -- GENERATED --
               */
