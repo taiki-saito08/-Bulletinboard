@@ -26,7 +26,7 @@ class ModelUser(db:Database) {
             }
         catch {
             case e: SQLException =>
-                
+                throw new SQLException
         }
         return loginUser
     }
@@ -46,7 +46,7 @@ class ModelUser(db:Database) {
             }
         catch {
             case e: SQLException =>
-                
+                throw new SQLException
         }
     }
 
@@ -63,7 +63,7 @@ class ModelUser(db:Database) {
             }
         catch {
             case e: SQLException =>
-                
+                throw new SQLException
         }
     }
 }

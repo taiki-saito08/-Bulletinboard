@@ -1,7 +1,9 @@
-@(messages:java.util.ArrayList[models.Comment],form:Form[CommentForm.Data],id:String)(implicit
+@(messages:java.util.ArrayList[models.Comment],form:Form[CommentForm.Data],id:String,msg:String)(implicit
     requerst: MessagesRequestHeader)
 
 @main("掲示板","掲示板","copyright 2019.") {
+    <h1>msg</h1>
+
     @for(message <- messages){
         <table>
             <tr>

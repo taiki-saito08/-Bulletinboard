@@ -1,7 +1,8 @@
     
-@(rooms:java.util.ArrayList[Room])
+@(rooms:java.util.ArrayList[Room],msg:String)
 
 @main("TOP","掲示板一覧","copyright 2019.") {
+    <h1>msg</h1>
     @for(room <- rooms){
         <table>
             <tr>
